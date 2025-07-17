@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="signup.html" class="signup-button">Sign up</a>
+  <a href="login.html" class="login-button">Login</a>
+</div>
   <div class="home-container">
-     <img id="hand" src="assets/hand.png" alt="hand" />
     <h1>Welcome to my Cookie Clicker</h1>
-    <p>Click while you still have fingers.</p>
-    <a href="game.html" class="play-button">Play</a>
+    <img id="home" src="assets/home.jpg" alt="home" />
+    <audio id="bg-music" src="assets/music.mp3" loop></audio>
+    <a href="#" class="play-button" onclick="playMusicAndRedirect(event)">Play</a>
+    <a href="instructions.html" class="instructions-button">Instructions</a>
+    <p>Click while you still have fingers. 😈</p>
   </div>
+  <script src="game.js"></script>
 </body>
 </html>

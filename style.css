@@ -1,4 +1,4 @@
-/* Page pour jouer*/
+/* ------------------------------------------------------------ Page pour jouer ------------------------------------------------------------ */
 
 body {
   font-family: sans-serif;
@@ -24,7 +24,32 @@ body {
   margin-top: 30px;
 }
 
-/* Page d'accueil*/
+/* ------------------------------------------------------------ Page d'accueil ------------------------------------------------------------ */
+
+.signup-button,
+.login-button {
+  position: absolute;
+  top: 70px;
+  background-color: #4682b4;
+  padding: 5px 10px;
+  color: white;
+  display: inline-block;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.signup-button {
+  right: 120px;
+}
+
+.login-button {
+  right: 20px;
+}
+
+.signup-button:hover,
+.login-button:hover {
+  background-color: #315f7c;
+}
 
 .home-container {
   display: flex;
@@ -37,8 +62,9 @@ body {
 }
 
 .home-container h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 4rem;
+  margin-bottom: 140px;
+  color: #000;
 }
 
 .home-container p {
@@ -47,7 +73,27 @@ body {
 }
 
 .play-button {
-  padding: 15px 30px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.play-button:hover {
+  background-color: #a0522d;
+}
+
+.instructions-button:hover {
+  background-color: #a0522d;
+}
+
+.instructions-button {
+  padding: 10px 30px;
   font-size: 1.2rem;
   background-color: #d2691e;
   color: white;
@@ -57,15 +103,199 @@ body {
   transition: background-color 0.3s;
 }
 
-.play-button:hover {
+#home {
+  width: 500px;
+  margin-bottom: 20px;
+  margin-top: -70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------------------------------------ Page d'instruction ------------------------------------------------------------ */
+
+body {
+  background-color: #fff8dc;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #d2691e;
+  margin-top: 30px;
+}
+
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #d2691e;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
   background-color: #a0522d;
 }
 
-#hand {
-  width: 400px;              /* Taille de l'image, ajuste si besoin */
-  margin-bottom: 20px;       /* Espace sous la main */
-  margin-top: 10px;          /* Espace au-dessus de la main */
-  display: block;            /* Pour forcer le centrage avec margin auto */
-  margin-left: auto;
-  margin-right: auto;
+/* ------------------------------------------------------------ Page de login ------------------------------------------------------------ */
+
+body {
+  background-color: #fff8dc;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #d2691e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.login-button:hover {
+  background-color: #a0522d;
+}
+
+.signup-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #d2691e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------ Page de signup ------------------------------------------------------------ */
+
+body {
+  background-color: #fff8dc;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #d2691e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.login-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #d2691e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.continue-button:hover {
+  background-color: #a0522d;
+}
+
+.continue-button {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 20px;
 }
