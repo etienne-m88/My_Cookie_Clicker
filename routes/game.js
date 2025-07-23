@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../db');
+import { Router } from 'express';
+const router = Router();
+import db from './db';
 
 // Enregistrer le score
 router.post('/save', (req, res) => {
@@ -31,4 +31,4 @@ router.get('/load', (req, res) => {
   );
 });
 
-module.exports = router;
+export default router;

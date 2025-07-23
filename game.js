@@ -1,4 +1,4 @@
-// Musique + redirection
+// Musique et redirection
 function playMusicAndRedirect(event) {
   event.preventDefault();
   const audio = document.getElementById('bg-music');
@@ -13,7 +13,7 @@ function playMusicAndRedirect(event) {
   }
 }
 
-// Code du jeu
+// Code du gameplay
 const cookie = document.getElementById('cookie');
 const counter = document.getElementById('counter');
 const autoClickerBtn = document.getElementById('autoClickerBtn');
