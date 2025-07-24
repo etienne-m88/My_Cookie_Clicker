@@ -16,17 +16,19 @@ document.querySelector('#login-form').addEventListener('submit', async (e) => {
     let data = {};
     try {
       data = JSON.parse(text);
-    } catch (err) {}
+    } catch (err) {
+      console.error("No response from JSON :", text);
+    }
 
     if (response.ok && data.success) {
-      localStorage.setItem('userId', data.userId);
-      localStorage.setItem('username', username);
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('username', data.username);
 
       window.location.href = 'game.html';
     } else {
       alert(data.error || "Connection failed.");
     }
   } catch (error) {
-    alert("Network error");
+    alert("Network error or server unreachable.");
   }
 });

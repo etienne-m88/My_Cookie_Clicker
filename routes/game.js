@@ -1,8 +1,8 @@
 import { Router } from 'express';
-const router = Router();
 import db from './db';
 
-// Enregistrer le score
+const router = Router();
+
 router.post('/save', (req, res) => {
   const { userId, score } = req.body;
 
@@ -11,13 +11,13 @@ router.post('/save', (req, res) => {
      VALUES ((SELECT id FROM saves WHERE user_id = ?), ?, ?, datetime('now'))`,
     [userId, userId, score],
     function (err) {
-      if (err) return res.status(500).json({ error: "Erreur lors de la sauvegarde." });
+      if (err) 
+        return res.status(500).json({ error: "Erreur lors de la sauvegarde." });
       res.json({ success: true });
     }
   );
 });
 
-// Charger le score
 router.get('/load', (req, res) => {
   const userId = req.query.userId;
 
@@ -25,7 +25,8 @@ router.get('/load', (req, res) => {
     `SELECT score FROM saves WHERE user_id = ?`,
     [userId],
     (err, row) => {
-      if (err || !row) return res.json({ score: 0 });
+      if (err || !row) 
+        return res.json({ score: 0 });
       res.json({ score: row.score });
     }
   );

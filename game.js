@@ -13,7 +13,7 @@ function playMusicAndRedirect(event) {
   }
 }
 
-// Code du gameplay
+// Gameplay
 const cookie = document.getElementById('cookie');
 const counter = document.getElementById('counter');
 const autoClickerBtn = document.getElementById('autoClickerBtn');

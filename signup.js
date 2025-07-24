@@ -5,7 +5,6 @@ document.querySelector('#signup-form').addEventListener('submit', async (e) => {
   const email = document.querySelector('#email').value;
   const password = document.querySelector('#password').value;
 
-  // Envoie une requête POST au serveur avec les données d'inscription
   try {
     const response = await fetch('http://localhost:5500/api/auth/signup', {
       method: 'POST',
@@ -18,7 +17,9 @@ document.querySelector('#signup-form').addEventListener('submit', async (e) => {
     let data = {};
     try {
       data = JSON.parse(text);
-    } catch (err) {}
+    } catch (err) {
+      console.error("Error");
+    }
 
     if (response.ok && data.success) {
       localStorage.setItem('userId', data.userId);
