@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 import db from '../db.js';
 
 const router = Router();
-const SECRET_KEY = 'My_Secret_Key';
+const SECRET_KEY = 'My_Secret_Key_Of_Epitech';
 
 router.post('/signup', async (req, res) => {
   const { username, email, password } = req.body;

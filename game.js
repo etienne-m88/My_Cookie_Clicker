@@ -5,12 +5,51 @@ function playMusicAndRedirect(event) {
   if (audio) {
     audio.play();
     localStorage.setItem('playMusic', 'yes');
-    setTimeout(() => {
-      window.location.href = "game.html";
-    }, 300);
+    setTimeout(() => location.href = "game.html", 300);
   } else {
     window.location.href = "game.html";
   }
+}
+
+// Système de save et load
+function getUserId() {
+  return localStorage.getItem('userId');
+}
+
+function saveGame() {
+  const userId = getUserId();
+  if (!userId) {
+    console.error("No userId found");
+    return;
+  }
+
+  fetch('http://localhost:5500/api/save/collect', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId: userId, score: cookieCount, autoClickers: autoClickerCount })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert("Saved game !");
+    } else {
+      console.error("Save error:", data.error);
+    }
+  });
+}
+
+function loadGame() {
+  const userId = getUserId();
+  if (!userId) 
+    return;
+
+  fetch(`http://localhost:5500/api/save/load?userId=${userId}`)
+    .then(res => res.json())
+    .then(data => {
+      cookieCount = data.score || 0;
+      autoClickerCount = data.autoClickers || 0;
+      updateDisplay();
+    });
 }
 
 // Gameplay
@@ -43,6 +82,12 @@ if (cookie && counter && autoClickerBtn && autoClickerCountDisplay) {
     if (audio && localStorage.getItem('playMusic') === 'yes') {
       audio.play();
       localStorage.removeItem('playMusic');
+    }
+    loadGame();
+
+    const saveBtn = document.getElementById('saveBtn');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', saveGame);
     }
   });
 

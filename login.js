@@ -22,7 +22,8 @@ document.querySelector('#login-form').addEventListener('submit', async (e) => {
 
     if (response.ok && data.success) {
       localStorage.setItem('token', data.token);
-      localStorage.setItem('username', data.username);
+      localStorage.setItem('userId', data.userId);
+      localStorage.setItem('playMusic', 'yes');
 
       window.location.href = 'game.html';
     } else {

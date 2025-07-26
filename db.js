@@ -18,6 +18,7 @@ db.serialize(() => {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER,
       score INTEGER DEFAULT 0,
+      auto_clickers INTEGER DEFAULT 0,
       last_update DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY(user_id) REFERENCES users(id)
     )
